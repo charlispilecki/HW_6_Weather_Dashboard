@@ -6,3 +6,27 @@
     display: flex;
     justify-content: space-around;
 }
+
+.container {
+    max-width: 1270px;
+}
+
+#sidebar {
+    padding-right: 60px;
+}
+
+.uv-low {
+background-color:rgb(84, 159, 84);
+}
+
+.uv-moderate {
+    background-color: rgb(225, 225, 117);
+}
+
+.uv-severe {
+    background-color: rgb(189, 85, 85);
+}
+
+body {
+    background-color: rgb(142, 167, 193);
+}

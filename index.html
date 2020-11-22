@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Charli's Weather Dashboard</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -20,75 +20,67 @@
                 <h2>Search for a City:</h2>
                 <form>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="">
+                        <input id="search-input" type="text" class="form-control" placeholder="">
                         <div class="input-group-append">
-                            <button type="submit" class="btn btn-secondary">Search</button>
+                            <button id="search-button" type="submit" class="btn btn-secondary">Search</button>
                         </div>
                     </div>
                 </form>
-                <ul class="list-group mb-3">
-                    <li class="list-group-item d-flex justify-content-between">
-                        <div>
-                            <h6 class="my-0">City 1</h6> 
-                        </div>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between">
-                        <div>
-                            <h6 class="my-0">City 2</h6> 
-                        </div>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between">
-                        <div>
-                            <h6 class="my-0">City 3</h6> 
-                        </div>
-                    </li>
+                <ul id="searched-cities" class="list-group mb-3">
                 </ul>
             </div>
             <div class="col-md-8">
                 <div class="card flex-md-row box-shadow">
                     <div class="card-body d-flex flex-column align-items-start">
                         <h3 id="city-name">City Name</h3>
+                        <img id="weather-icon" src="https://openweathermap.org/img/wn/04n@2x.png">
                         <p>Temperature: <span id="temp"></span></p>
                         <p>Humidity: <span id="humid"></span></p>
                         <p>Wind Speed: <span id="wind"></span></p>
                         <p>UV Index: <span id="uv"></span></p>
                     </div>
                 </div>
+                <div class="pt-4"></div>
                 <h3>5-Day Forecast:</h3>
                 <div class="forecast">
-                    <div class="card flex-md-row box-shadow">
+                    <div class="card flex-md-row box-shadow" id="forecast-one">
                         <div class="card-body d-flex flex-column align-items-start">
-                            <h5>City Name</h5>
-                            <p>Temperature:</p>
-                            <p>Humidity:</p>
+                            <h5 id="forecast-one-date">Date</h5>
+                            <img id="forecast-one-icon" src="">
+                            <p id="forecast-one-temp">Temperature:</p>
+                            <p id="forecast-one-humid">Humidity:</p>
                         </div>
                     </div>
-                    <div class="card flex-md-row box-shadow">
+                    <div class="card flex-md-row box-shadow" id="forecast-two">
                         <div class="card-body d-flex flex-column align-items-start">
-                            <h5>City Name</h5>
-                            <p>Temperature:</p>
-                            <p>Humidity:</p>
+                            <h5 id="forecast-two-date">Date</h5>
+                            <img id="forecast-two-icon" src="">
+                            <p id="forecast-two-temp">Temperature:</p>
+                            <p id="forecast-two-humid">Humidity:</p>
                         </div>
                     </div>
-                    <div class="card flex-md-row box-shadow">
+                    <div class="card flex-md-row box-shadow" id="forecast-three">
                         <div class="card-body d-flex flex-column align-items-start">
-                            <h5>City Name</h5>
-                            <p>Temperature:</p>
-                            <p>Humidity:</p>
+                            <h5 id="forecast-three-date">Date</h5>
+                            <img id="forecast-three-icon" src="">
+                            <p id="forecast-three-temp">Temperature:</p>
+                            <p id="forecast-three-humid">Humidity:</p>
                         </div>
                     </div>
-                    <div class="card flex-md-row box-shadow">
+                    <div class="card flex-md-row box-shadow" id="forecast-four">
                         <div class="card-body d-flex flex-column align-items-start">
-                            <h5>City Name</h5>
-                            <p>Temperature:</p>
-                            <p>Humidity:</p>
+                            <h5 id="forecast-four-date">Date</h5>
+                            <img id="forecast-four-icon" src="">
+                            <p id="forecast-four-temp">Temperature:</p>
+                            <p id="forecast-four-humid">Humidity:</p>
                         </div>
                     </div>
-                    <div class="card flex-md-row box-shadow">
+                    <div class="card flex-md-row box-shadow" id="forecast-five">
                         <div class="card-body d-flex flex-column align-items-start">
-                            <h5>City Name</h5>
-                            <p>Temperature:</p>
-                            <p>Humidity:</p>
+                            <h5 id="forecast-five-date">Date</h5>
+                            <img id="forecast-five-icon" src="">
+                            <p id="forecast-five-temp">Temperature:</p>
+                            <p id="forecast-five-humid">Humidity:</p>
                         </div>
                     </div>
                 </div>
