@@ -75,7 +75,7 @@ function showCityWeather(cityName) {
     localStorage.setItem('searchedCities', JSON.stringify(searchedCities))
 
     // AJAX functions for the APIs
-    $.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=32a6bd8e1707690576a18bee7c728812&units=imperial`)
+    $.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=32a6bd8e1707690576a18bee7c728812&units=imperial`)
         .then(function (response)
         // need to pull the Temperature, Humidity, Wind Speed, and Icon
         {
@@ -96,7 +96,7 @@ function showCityWeather(cityName) {
             weatherIcon.setAttribute('src', `https://openweathermap.org/img/wn/${icon}@2x.png`)
 
             // UVI API => pass coordinates from weather API to UVI API to get UV index
-            $.get(`http://api.openweathermap.org/data/2.5/uvi?appid=32a6bd8e1707690576a18bee7c728812&lat=${cityLat}&lon=${cityLong}`)
+            $.get(`https://api.openweathermap.org/data/2.5/uvi?appid=32a6bd8e1707690576a18bee7c728812&lat=${cityLat}&lon=${cityLong}`)
                 .then(function (response) {
 
                     var cityUVIndexP = document.querySelector("#uv")
@@ -115,7 +115,7 @@ function showCityWeather(cityName) {
                 });
 
             // 5 day forcast 
-            $.get(`http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=32a6bd8e1707690576a18bee7c728812&units=imperial`)
+            $.get(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=32a6bd8e1707690576a18bee7c728812&units=imperial`)
                 .then(function (response) {
 
                     forecastDateOne.innerHTML = response.list[0].dt_txt.substring(0, 10)
